@@ -12,7 +12,7 @@ if [ "$(docker ps -a --quiet --filter status=running --filter name=$CONTAINER_NA
 fi
 
 
-echo "Building ${DOCKERFILE} as image: ${IMAGE_NAME} with base: ${BASE_IMAGE_NAME}"
+echo "Building ${DOCKERFILE} as image: ${IMAGE_NAME}"
 
 
 docker build -f $DOCKERFILE \

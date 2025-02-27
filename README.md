@@ -1,44 +1,47 @@
-# Docker-Workspaces
-Installation Directives for Docker
-## Windows
-### Prequest
-* Virtualization enabled in BIOS
-* Windows Subsystem for Linux 2 (WSL 2) enabled (recommended)
 
-### Windows Subsystem for Linux (WSL) Installation
-* Open PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting "Run as administrator". Run the following command.
+# Docker-Workspaces  
+Simulation Environment  
 
-```PowerShell
-wsl --install
-```
-* To open wsl you have to install Linux Distribution.
-* To install distrubition, enter:
-```powershell
- wsl --install -d <Distribution Name>
-``` 
-* Replace <Distribution Name> with the name of the distribution you would like to install.
-* Or you can install Distribution from Windows Store.
-* For upgrade wsl 1 to wsl 2 follow the steps.
-``` powershell
-wsl.exe --set-version (distribution name) 2
-wsl.exe --set-default-version 2
+## Clone Repository  
+Clone the repository with submodules using this command:  
+```bash
+git clone https://github.com/ITU-EMAV/Docker-Workspaces.git -b simulation-environment --recursive
 ```
 
-* For more about WSL installation you can visit [miscrosoft learn](https://learn.microsoft.com/en-us/windows/wsl/install).
-* If you have encountered problem with installation of wsl you can follow orders in [Microsoft Manual installation for older versions of WSL](https://learn.microsoft.com/en-us/windows/wsl/install-manual). 
+To update submodules recursively:  
+```bash
+git submodule update --init --recursive
+```  
 
-### WSL 2 Upgrade
+## Run  
+After installing Docker, run the appropriate script for your operating system:  
+- Use [```run.bat```](run.bat) for Windows.  
+- Use [```run.sh```](run.sh) for Ubuntu or Mac.  
 
-  
-### Docker Installation
-1. Install WSL with at least version 1.1.3.0.
-2. Download Docker Desktop for Windows from offical [website](https://www.docker.com/get-started/).
-3. Run the installer (Docker Desktop Installer.exe)
-4. Follow the usual installation instructions to install Docker Desktop. Depending on which version of Windows you are using, Docker Desktop may prompt you to turn on WSL 2 during installation. Read the information displayed on the screen and turn on the WSL 2 feature to continue.
-5. Start Docker Desktop from the Windows Start menu.
-6. Navigate to Settings.
-7. From the General tab, select Use WSL 2 based engine.. If you have installed Docker Desktop on a system that supports WSL 2, this option is turned on by default.
-8. Select Apply & Restart.
-9. For further information you can visit offical [docker website](https://docs.docker.com/desktop/features/wsl/).
-    
+## Open Environment  
+1. Run the [```run.sh```](run.sh)/[```run.bat```](run.bat) script.  
+2. Open **Google Chrome**.  
+3. Type `localhost:6081` in the address bar and click **Connect**.  
+    ![StartScreen](imgs/StartScreen.png)  
+4. You are now in a virtual environment for developing ROS and Gazebo projects.  
+    ![DesktopScreen](imgs/DesktopScreen.png)  
+5. In **Ubuntu's Home** folder, there is a `workspace` directory containing `ros2_ws` and `gazebo_environment`.  
+    ![alt text](imgs/WorkspaceScreen.png)  
+6. Open a terminal inside the `ros2_ws` folder.  
+    ![alt text](imgs/OpenTerminalScreen.png)  
+7. Run the following commands in the terminal:  
+    ```bash
+    colcon build
+    source install/setup.bash
+    ```
+    ![alt text](imgs/TypeCommandScreen.png)  
+8. Your environment is now ready.  
 
+## Test the Environment  
+In the same terminal, type:  
+```bash
+ros2 launch gazebo_environment sonoma.launch.py
+```
+![alt text](imgs/GazeboScreen.png)  
+
+The Gazebo environment should now open on your screen.  
