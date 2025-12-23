@@ -1,3 +1,0 @@
-[submodule "workspace/ros2_ws/src/gazebo_environment"]
-	path = workspace/ros2_ws/src/gazebo_environment
-	url = https://github.com/ITU-EMAV/gazebo_environment.git
