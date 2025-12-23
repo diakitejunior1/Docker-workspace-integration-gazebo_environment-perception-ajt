@@ -34,6 +34,7 @@ setup(
             "pose_logger = gazebo_environment.pose_logger:main",
             "pure_pursuit = gazebo_environment.pure_pursuit:main",
             "PID_controller = gazebo_environment.PID_controller:main",
+            "Stanley_controller = gazebo_environment.Stanley_controller:main",
 
         ],
     },
