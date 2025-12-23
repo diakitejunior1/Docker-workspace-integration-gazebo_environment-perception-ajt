@@ -1,3 +1,17 @@
 workspace/ros2_ws/build
 workspace/ros2_ws/install
 workspace/ros2_ws/log
+# Python cache
+__pycache__/
+*.pyc
+
+# ROS workspace build artifacts
+build/
+install/
+log/
+
+# macOS
+.DS_Store
+
+# Large model files
+Perception/model.pt
