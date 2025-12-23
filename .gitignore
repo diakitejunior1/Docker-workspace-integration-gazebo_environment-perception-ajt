@@ -1,11 +1,11 @@
 workspace/ros2_ws/build
 workspace/ros2_ws/install
 workspace/ros2_ws/log
-# Python cache
+ # Python cache
 __pycache__/
 *.pyc
 
-# ROS workspace build artifacts
+# ROS workspace artifacts
 build/
 install/
 log/
@@ -15,3 +15,8 @@ log/
 
 # Large model files
 Perception/model.pt
+
+# ZIPs
+*.zip
+workspace/ros2_ws/src.zip
+workspace/ros2_ws/src/perception_ros/Perception/model.pt
